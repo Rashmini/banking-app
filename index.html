@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking App</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="index-page">
+    <main class="form-signin">
+        <form id="formAuthentication" class="mb-3 needs-validation" novalidate>
+            <img class="mb-4" src="images/logo.svg" alt="" width="100" height="80">
+            <h1 class="h3 mb-3 fw-normal">Welcome to ABC!</h1>
+            <p>Please sign in to your account.</p>
+            <div class="mb-3">
+                <label for="username" class="form-label">USERNAME</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+                    required autofocus />
+                <div class="invalid-feedback">
+                    Please enter your username.
+                </div>
+            </div>
+            <div class="mb-3 form-password-toggle">
+                <div class="d-flex justify-content-between">
+                    <label class="form-label" for="password">PASSWORD</label>
+                    <a href="#">
+                        <small>Forgot Password?</small>
+                    </a>
+                </div>
+                <div class="input-group input-group-merge">
+                    <input type="password" id="password" class="form-control" name="password"
+                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                        aria-describedby="password" required />
+                    <div class="invalid-feedback">
+                        Please enter your password.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-me" />
+                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                </div>
+            </div>
+            <div id="error-message" class="invalid-feedback mb-3">Invalid username or password.</div>
+            <div class="mb-3">
+                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+            </div>
+            <p class="text-center">
+                <span>New here?</span>
+                <a href="#">
+                    <span>Create an account</span>
+                </a>
+            </p>
+        </form>
+    </main>
+    <div id="alert-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;"></div>
+    <script type="module" src="js/script.js"></script>
+    <script src="js/validate.js"></script>
+</body>
+
+
+</html>

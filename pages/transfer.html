@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="d-flex">
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-3 bg-light">
+            <img class="mb-4" src="../images/logo.svg" alt="" width="100" height="80">
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link link-dark">
+                        <i class="bi bi-person-lines-fill me-2"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="accounts.html" class="nav-link link-dark">
+                        <i class="bi bi-credit-card me-2"></i>
+                        <span>Accounts & Transactions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transfer.html" class="nav-link active" aria-current="page">
+                        <i class="bi bi-cash me-2"></i>
+                        <span>Transfer</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content w-100">
+            <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+                <div class="container-fluid d-flex justify-content-end align-items-center">
+                    <div class="d-flex align-items-center">
+                        <div class="navbar-icons me-3">
+                            <div class="dropdown">
+                                <a href="#" class="link-light me-2 dropdown-toggle custom-dropdown"
+                                    id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-envelope"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="notification-icon"></div>
+                                            <div class="notification-text">
+                                                Successfully transferred
+                                                <span class="notification-time">5 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="notification-icon"></div>
+                                            <div class="notification-text">
+                                                Reminder: Maintenance downtime
+                                                <span class="notification-time">10 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="notification-icon"></div>
+                                            <div class="notification-text">
+                                                Payment successful!
+                                                <span class="notification-time">20 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="https://github.com/Rashmini/banking-app/issues" target="_blank"
+                                class="link-light me-2">
+                                <i class="bi bi-question-circle"></i>
+                            </a>
+                        </div>
+                        <div class="dropdown">
+                            <a href="#"
+                                class="d-flex align-items-center link-light text-decoration-none dropdown-toggle"
+                                id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../images/profile.png" alt="" width="32" height="32"
+                                    class="rounded-circle me-2">
+                                <strong id="username">Username</strong>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end text-small shadow"
+                                aria-labelledby="dropdownUser2">
+                                <li><a class="dropdown-item" href="../index.html">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5">
+                <h1>Transfer Funds</h1>
+                <ul class="nav nav-tabs" id="transfer-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="own-account-tab" data-bs-toggle="tab" href="#own-account"
+                            role="tab">Own Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="other-account-tab" data-bs-toggle="tab" href="#other-account"
+                            role="tab">Other Account</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="transfer-tabs-content">
+                    <!-- Own Account Tab -->
+                    <div class="tab-pane fade show active" id="own-account" role="tabpanel">
+                        <form id="own-account-form" class="needs-validation mt-3" novalidate>
+                            <div class="mb-3">
+                                <label for="from-account-own" class="form-label">From Account</label>
+                                <select id="from-account-own" class="form-select" name="from-account-own" required>
+                                    <option value="" disabled selected>Select an account</option>
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                                <div class="invalid-feedback">Please select a valid account.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="to-account-own" class="form-label">To Account</label>
+                                <select id="to-account-own" class="form-select" name="to-account-own" required>
+                                    <option value="" disabled selected>Select an account</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a valid account.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount-own" class="form-label">Amount</label>
+                                <input type="number" id="amount-own" class="form-control" name="amount-own" step="0.01"
+                                    required>
+                                <div class="invalid-feedback">Please enter a valid amount.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="confirm-own">Confirm</button>
+                        </form>
+                    </div>
+                    <!-- Other Account Tab -->
+                    <div class="tab-pane fade" id="other-account" role="tabpanel">
+                        <form id="other-account-form" class="needs-validation mt-3" novalidate>
+                            <div class="mb-3">
+                                <label for="from-account-other" class="form-label">From Account</label>
+                                <select id="from-account-other" class="form-select" name="from-account-other" required>
+                                    <option value="" disabled selected>Select an account</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a valid account.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="to-account-other" class="form-label">To Account</label>
+                                <input type="text" id="to-account-other" class="form-control" name="to-account-other"
+                                    required>
+                                <div class="invalid-feedback">Please enter a valid account number.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount-other" class="form-label">Amount</label>
+                                <input type="number" id="amount-other" class="form-control" name="amount-other"
+                                    step="0.01" required>
+                                <div class="invalid-feedback">Please enter a valid amount.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="confirm-other">Confirm</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="alert-container" class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="../js/transfer.js"></script>
+    <script src="../js/validate.js"></script>
+</body>
+
+</html>
